@@ -15,14 +15,16 @@ const Tab = () => {
         tabBarActiveTintColor:'yellow',
         tabBarInactiveTintColor:'grey',tabBarShowLabel:false,
         tabBarLabelPosition:'below-icon',
-        tabBarHideOnKeyboard:false,
+        tabBarHideOnKeyboard:true,
         
         tabBarStyle:{position:'absolute',
                     bottom:0.1,
                     borderRadius:4,
                     elevation:10,
                     height:'8%',
-                    backgroundColor:'black'
+                    backgroundColor:'#242527',
+                    borderBlockColor:'#242527'
+                    
                 }
     }}
     >

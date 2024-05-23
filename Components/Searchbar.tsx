@@ -14,10 +14,11 @@ const Searchbar = (props: any) => {
           placeholder='Search For Movies'
           value={search}
           onChangeText={TextInput => setsearch(TextInput)}
-          style={{fontSize:18,marginLeft:moderateScale(10)}}
+          style={{fontSize:18,marginLeft:moderateScale(10),color:'#fff'}}
+          placeholderTextColor={'#fff'}
         />
         <TouchableOpacity 
-        style={{marginLeft:moderateScale(175),marginTop:moderateScale(10)}}
+        style={{marginLeft:moderateScale(155),marginTop:moderateScale(10)}}
         onPress={()=> props.searchFunction(search)}>
         <Image
         source={{uri:'https://cdn-icons-png.flaticon.com/512/622/622669.png'}}

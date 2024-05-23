@@ -3,7 +3,7 @@ import React from 'react'
 
 const Search = () => {
   return (
-    <View style={{backgroundColor:'black',flex:1}}>
+    <View style={{backgroundColor:'#242527',flex:1}}>
       <Text>Search</Text>
     </View>
   )

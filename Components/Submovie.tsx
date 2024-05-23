@@ -8,7 +8,7 @@ const Submovie = (props: any) => {
     <View style={{marginTop:moderateScale(24),alignItems:'center'}}>
       <Image 
       source={{uri:props.path}}
-      style={{height:moderateScale(220),width:props.cardWidth,borderRadius:13}}
+      style={{height:moderateScale(220),width:props.cardWidth,borderRadius:12}}
       />
       <Text style={{color:'#fff',fontSize:16,marginTop:moderateScale(10)}}>{props.title}</Text>
     </View>
