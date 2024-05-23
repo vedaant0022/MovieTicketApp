@@ -13,7 +13,7 @@ const Searchbar = (props: any) => {
         <TextInput
           placeholder='Search For Movies'
           value={search}
-          onChangeText={TextInput => setsearch(TextInput)}
+          onChangeText={textInput => setsearch(textInput)}
           style={{fontSize:18,marginLeft:moderateScale(10),color:'#fff'}}
           placeholderTextColor={'#fff'}
         />
@@ -24,7 +24,7 @@ const Searchbar = (props: any) => {
         source={{uri:'https://cdn-icons-png.flaticon.com/512/622/622669.png'}}
         style={{height:moderateScale(25),width:moderateScale(25),tintColor:'grey'}}
         />
-        {/* <Text style={{fontSize:18,color:'#fff'}}>HEllo</Text> */}
+        
         </TouchableOpacity>
       </View>
     
