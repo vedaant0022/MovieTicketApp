@@ -2,10 +2,10 @@ import { View, Text, Image, ActivityIndicator } from 'react-native'
 import React, { useEffect } from 'react'
 import { moderateScale } from 'react-native-size-matters'
 
-const Splash = ({navigation}) => {
+const Splash = ({navigation,route}: any) => {
   useEffect(() =>{
     setTimeout(()=>{
-        navigation.navigate('Tab');
+        navigation.navigate('Start');
     },2000);
 },[]);
   return (

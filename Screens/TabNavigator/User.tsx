@@ -7,12 +7,23 @@ const User = () => {
   return (
     <View style={{ backgroundColor: '#242527', flex: 1 }}>
       <View style={{ marginLeft: moderateScale(18), marginRight: moderateScale(18), marginTop: moderateScale(24) }}>
+        {/* Header */}
+          <View>
+            <View style={{flexDirection:'row',gap:10,justifyContent:'center'}}>
+              <Image
+              source={{uri:'https://cdn-icons-png.flaticon.com/512/711/711917.png'}}
+              style={{height:moderateScale(25),width:moderateScale(25),tintColor:'yellow',marginTop:moderateScale(5)}}
+              />
+              <Text style={{color:'#fff',fontSize:28,fontStyle:'italic'}}>Ticketopia</Text>
+            </View>
+          </View>
+
         {/* Profile */}
-        <View style={{ alignItems: 'center' }}>
+        {/* <View style={{ alignItems: 'center' }}>
           <Text style={{ fontSize: 24, color: '#fff' ,fontWeight:'500'}}>My Profile</Text>
-        </View>
+        </View> */}
         {/* Profile */}
-        <View style={{ alignItems: 'center', marginTop: verticalScale(50) }}>
+        <View style={{ alignItems: 'center', marginTop: verticalScale(30) }}>
           <Image
             source={{ uri: 'https://w0.peakpx.com/wallpaper/158/677/HD-wallpaper-andrew-tate.jpg' }}
             style={{ height: moderateScale(125), width: moderateScale(125), borderRadius: 100, }}

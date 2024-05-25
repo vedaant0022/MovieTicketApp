@@ -9,8 +9,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Search = ({navigation}: any) => {
   const Stack = createNativeStackNavigator();
   const [searchList, setSearchList] = useState([]);
-
-
+  
   const searchMoviesFunction = async (name: string) => {
     console.log(searchMovies(name))
     try {
