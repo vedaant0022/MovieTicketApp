@@ -39,7 +39,7 @@ const User = () => {
         </View>
         {/* Options */}
 
-        <View style={{ marginTop: moderateScale(30) }}>
+        <View style={{ marginTop: moderateScale(25) }}>
           <TouchableOpacity>
             <Usersettings
              name= 'Account'

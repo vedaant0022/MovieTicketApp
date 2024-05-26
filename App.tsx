@@ -52,7 +52,7 @@ export default function App() {
       options={{animation:'flip'}}
       /> */}
       {/* <Stack.Screen name="Details" component={Moviedetails} /> */}
-      {/* <Stack.Screen name="Splash" component={Splash} /> */}
+      <Stack.Screen name="Splash" component={Splash} />
       {/* <Stack.Screen name="Booking" component={Seatbooking} options={{animation:'slide_from_bottom'}} /> */}
       <Stack.Screen name="Start" component={Getstarted} options={{animation:'slide_from_bottom'}} />
       <Stack.Screen name="Signup" component={Signup} options={{animation:'ios'}} />

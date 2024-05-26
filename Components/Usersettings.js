@@ -12,7 +12,7 @@ const Usersettings = (props) => {
         style={{height:moderateScale(22),width:moderateScale(22),tintColor:'#fff',marginTop:moderateVerticalScale(10)}}
         />
         <View>
-            <Text style={{color:'#fff',fontSize:24,fontWeight:'600'}}>{props.name}</Text>
+            <Text style={{color:'#fff',fontSize:20,fontWeight:'500'}}>{props.name}</Text>
             <Text style={{color:'grey',fontSize:15}}>{props.op1}</Text>
             <Text style={{color:'grey',fontSize:15}}>{props.op2}</Text>
         </View>

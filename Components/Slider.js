@@ -39,7 +39,7 @@ const Slider = () => {
   // 
   useEffect(() => {
 		let interval = setInterval(() => {
-			if (activeIndex === Data.length - 1) {
+			if (activeIndex === Data.length -1) {
 				flatlistRef.current.scrollToIndex({
 					index: 0,
 					animation: true,
@@ -53,17 +53,17 @@ const Slider = () => {
 		}, 2000);
 
 		return () => clearInterval(interval);
-	});
+	},	[activeIndex, Data.length]);
 
   const handleScroll = (event) => {
 		// Get the scroll position
 		const scrollPosition = event.nativeEvent.contentOffset.x;
-		console.log({ scrollPosition });
+		// console.log({ scrollPosition });
 		// Get the index of current active item
 
-		const index = scrollPosition /screenWidth ;
+		const index = Math.round(scrollPosition /screenWidth) ;
 
-		console.log({ index });
+		// console.log({ index });
 		// Update the index
 
 		setActiveIndex(index);
@@ -71,42 +71,11 @@ const Slider = () => {
 
 	const getItemLayout = (data, index) => ({
 		length: screenWidth,
-		offset: screenWidth * index, // for first image - 300 * 0 = 0pixels, 300 * 1 = 300, 300*2 = 600
+		offset: screenWidth * index, 
 		index: index,
 	});
   // Dots
-  const renderDotIndicators = () => {
-		return Data.map((dot, index) => {
-			// if the active index === index
-
-			if (activeIndex === index) {
-				return (
-					<View
-						style={{
-							backgroundColor: "green",
-							height: 10,
-							width: 10,
-							borderRadius: 5,
-							marginHorizontal: 6,
-						}}
-					></View>
-				);
-			} else {
-				return (
-					<View
-						key={index}
-						style={{
-							backgroundColor: "red",
-							height: 10,
-							width: 10,
-							borderRadius: 5,
-							marginHorizontal: 6,
-						}}
-					></View>
-				);
-			}
-		});
-	};
+  
   return (
     <View>
 			<FlatList

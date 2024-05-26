@@ -17,7 +17,7 @@ const Getstarted = ({navigation, route}: any) => {
             <Slider/>
             </View>
           {/* Button */}
-          <View style={{alignItems:'center',marginTop:moderateVerticalScale(30)}}>
+          <View style={{alignItems:'center',marginTop:moderateVerticalScale(22)}}>
             <TouchableOpacity
             onPress={()=>{navigation.navigate("Signup")}}
             >
@@ -27,9 +27,9 @@ const Getstarted = ({navigation, route}: any) => {
             </TouchableOpacity>
           </View>
           {/* Line */}
-          <View style={{borderWidth:0.5,marginTop:moderateVerticalScale(25),borderColor:'#5D5D5D'}}></View>
+          <View style={{borderWidth:0.5,marginTop:moderateVerticalScale(20),borderColor:'#5D5D5D'}}></View>
           {/* Already have account */}
-          <View style={{alignItems:'center',marginTop:moderateVerticalScale(20)}}>
+          <View style={{alignItems:'center',marginTop:moderateVerticalScale(15)}}>
             <TouchableOpacity 
             onPress={()=>{navigation.navigate("Login")}}
             >
