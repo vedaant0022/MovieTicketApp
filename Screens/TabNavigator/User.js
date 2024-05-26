@@ -2,8 +2,15 @@ import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { moderateScale, verticalScale } from 'react-native-size-matters'
 import Usersettings from '../../Components/Usersettings'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { signOut } from 'firebase/auth'
+import { auth } from '../../config/firebase'
 
 const User = () => {
+  const Stack = createNativeStackNavigator();
+  const logout = async()=>{
+    await signOut(auth);
+  }
   return (
     <View style={{ backgroundColor: '#242527', flex: 1 }}>
       <View style={{ marginLeft: moderateScale(18), marginRight: moderateScale(18), marginTop: moderateScale(24) }}>
@@ -69,7 +76,7 @@ const User = () => {
             />
           </TouchableOpacity>
 
-          <TouchableOpacity>
+          <TouchableOpacity onPress={logout}>
             <Usersettings
              name= 'Logout'
              op1='Logout'

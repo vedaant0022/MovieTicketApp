@@ -2,11 +2,24 @@ import { View, Text, ScrollView, SafeAreaView, Image, TouchableOpacity, Switch, 
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 import React, { useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../config/firebase';
 
 
 const App = () => {
   const navigation = useNavigation()
+  const [email, setemail] = useState('');
+  const [password, setpassword] = useState('');
   
+  const login = async()=>{
+    if (email&&password){
+      try {
+        await signInWithEmailAndPassword(auth,email,password);
+      } catch (error) {
+        console.log("Error in login ",error)
+      }
+    }
+  }
    
   return (
     <SafeAreaView style={{backgroundColor:'#252526',height:'100%'}}>
@@ -40,7 +53,9 @@ const App = () => {
                 <TextInput
                   placeholder='Enter Email'
                   placeholderTextColor={'#c6c6c7'}
-                  style={{fontSize:16,paddingLeft:moderateScale(12)}}
+                  style={{fontSize:16,paddingLeft:moderateScale(12),color:'#AEAEAE'}}
+                  value={email}
+                  onChangeText={value=>setemail(value)}
                   />
               </View>
             </View>
@@ -53,7 +68,10 @@ const App = () => {
                 <TextInput
                   placeholder='Enter Password'
                   placeholderTextColor={'#c6c6c7'}
-                  style={{fontSize:16,paddingLeft:moderateScale(12)}}
+                  secureTextEntry={true}
+                  value={password}
+                  onChangeText={value=>setpassword(value)}
+                  style={{fontSize:16,paddingLeft:moderateScale(12),color:'#AEAEAE'}}
                   />
               </View>
             </View>
@@ -67,7 +85,7 @@ const App = () => {
             </View>
             {/* Login Button */}
             <View>
-              <TouchableOpacity >
+              <TouchableOpacity onPress={login} >
                 <View style={{borderWidth:1,height:moderateScale(43),alignItems:'center',marginTop:moderateScale(35),borderRadius:10,backgroundColor:'yellow',borderColor:'#E58179'}}>
                   <Text style={{fontWeight:'600',fontSize:21,color:'black',paddingTop:moderateScale(5)}}>Login</Text>
                 </View>
