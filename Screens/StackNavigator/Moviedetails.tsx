@@ -144,6 +144,7 @@ useEffect(() => {
             <TouchableOpacity
             onPress={() => {
               navigation.push('Booking', {
+                moviedata:moviedata,
                 BgImage: baseImagePath('w780', moviedata.backdrop_path),
                 PosterImage: baseImagePath('original', moviedata.poster_path),
               });

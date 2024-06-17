@@ -69,13 +69,7 @@ const Homescreen = ({navigation}:any) => {
 
     })();
   }, []);
-  // Console log for movie list
-  // console.log(
-  //   nowplayinglist.length,
-  //   upcominglist.length,
-  //   popularlist.length
-  // )
-// Search
+
 const searchMovieFunction = () => {
   navigation.navigate('Search')
 }

@@ -2,15 +2,21 @@ import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { moderateScale, verticalScale } from 'react-native-size-matters'
 import Usersettings from '../../Components/Usersettings'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { signOut } from 'firebase/auth'
 import { auth } from '../../config/firebase'
+import { useNavigation } from '@react-navigation/native'
+
 
 const User = () => {
-  const Stack = createNativeStackNavigator();
+
+ 
+const navigation = useNavigation()
+  
   const logout = async()=>{
     await signOut(auth);
   }
+
+
   return (
     <View style={{ backgroundColor: '#242527', flex: 1 }}>
       <View style={{ marginLeft: moderateScale(18), marginRight: moderateScale(18), marginTop: moderateScale(24) }}>
@@ -38,7 +44,6 @@ const User = () => {
           <Text style={{ fontSize: 21, color: '#fff', fontWeight: '500', paddingTop: moderateScale(15) }}>Admin</Text>
         </View>
         {/* Options */}
-
         <View style={{ marginTop: moderateScale(25) }}>
           <TouchableOpacity>
             <Usersettings
@@ -46,6 +51,14 @@ const User = () => {
              op1='Edit Profile'
              op2='Change Password'
              img = {{uri:'https://cdn-icons-png.flaticon.com/512/747/747376.png'}}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={()=>{navigation.navigate("Ticket")}}>
+            <Usersettings
+            name= 'Your Tickets'
+            op1='Booked Tickets'
+            op2='Download Your Tickets'
+            img = {{uri:'https://cdn-icons-png.flaticon.com/512/3702/3702886.png'}}
             />
           </TouchableOpacity>
 
